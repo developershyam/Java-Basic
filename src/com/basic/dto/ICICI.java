@@ -1,4 +1,4 @@
-package com.test.dto;
+package com.basic.dto;
 
 public class ICICI {
 	

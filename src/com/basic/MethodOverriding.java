@@ -1,7 +1,7 @@
 package com.basic;
 
-import com.test.dto.Child;
-import com.test.dto.Parent;
+import com.basic.dto.Child;
+import com.basic.dto.Parent;
 
 //If subclass (child class) has the same method as declared in the parent class, 
 //Method overriding is used to provide specific implementation of a method that is already provided by its super class.

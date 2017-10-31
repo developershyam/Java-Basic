@@ -1,10 +1,22 @@
-package com.test.dto;
+package com.basic.dto;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
 public class Parent {
+	
+	public Parent() {
+		System.out.println("Parent: no-args");
+	}
+	
+	public Parent(int x) {
+		System.out.println("Parent: one-args => "+x);
+	}
+	
+	public Parent(String s) throws IOException{
+		System.out.println("Parent: one-args-String throws Ex. => "+s);
+	}
 
 	public String name = "Parent";
 

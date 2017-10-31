@@ -4,8 +4,8 @@ package com.basic;
 //For Method Overriding (so runtime polymorphism can be achieved).
 
 
-import com.test.dto.Child;
-import com.test.dto.Parent;
+import com.basic.dto.Child;
+import com.basic.dto.Parent;
 
 //On the basis of class, there can be three types of inheritance in java: single, multilevel and hierarchical.
 
