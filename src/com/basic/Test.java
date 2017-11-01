@@ -1,9 +1,15 @@
 package com.basic;
 
+import com.basic.dto.Parent;
+
 public class Test {
 	
+	Parent p = new Parent();
 	public static void main(String[] args) {
-		System.out.println("***");
+		
+		Parent p = new Parent();
+		Test t = new Test();
+		
 	}
-
+	
 }

@@ -3,19 +3,18 @@ package com.basic.dto;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
 public class Parent {
-	
+
 	public Parent() {
 		System.out.println("Parent: no-args");
 	}
-	
+
 	public Parent(int x) {
-		System.out.println("Parent: one-args => "+x);
+		System.out.println("Parent: one-args => " + x);
 	}
-	
-	public Parent(String s) throws IOException{
-		System.out.println("Parent: one-args-String throws Ex. => "+s);
+
+	public Parent(String s) throws IOException {
+		System.out.println("Parent: one-args-String throws Ex. => " + s);
 	}
 
 	public String name = "Parent";
@@ -24,7 +23,7 @@ public class Parent {
 		return name;
 	}
 
-	public  static String testStatic() {
+	public static String testStatic() {
 		return "Parent: testStatic";
 	}
 
@@ -43,5 +42,6 @@ public class Parent {
 	public void testChildException() throws Exception {
 		System.out.println("Parent: testChildException");
 	}
+
 
 }
