@@ -7,9 +7,11 @@ public class Armstrong {
 		int n = 153;// It is the number to check armstrong
 		temp = n;
 		while (n > 0) {
+			
 			a = n % 10;
 			n = n / 10;
 			csum = csum + (a * a * a);
+			
 		}
 		if (temp == csum)
 			System.out.println("armstrong number");
