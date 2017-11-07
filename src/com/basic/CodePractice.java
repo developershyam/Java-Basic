@@ -38,26 +38,46 @@ public class CodePractice {
 		// longRepeatSubString("aba2invoiceaaa");
 
 		// permuteString("", "ABCA");
-		
-		
-		// one missing number
-     //   printMissingNumber(new int[]{ 2, 3, 4, 6}, 6);
- 
-        // two missing number
-     //   printMissingNumber(new int[]{1, 2, 3, 4, 6, 7, 9, 8, 10}, 10);
- 
-        // three missing number
-      //  printMissingNumber(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
- 
-        // four missing number
-       // printMissingNumber(new int[]{1, 2, 3, 4, 9, 8}, 10);
- 
-        // Only one missing number in array
-       // int[] iArray = new int[]{1, 2, 3, 5};
-      //  int missing = getMissingNumber(iArray, 5);
-      //  System.out.printf("Missing number in array %s is %d %n", 
-                  //         Arrays.toString(iArray), missing);
 
+		// one missing number
+		// printMissingNumber(new int[]{ 2, 3, 4, 6}, 6);
+
+		// two missing number
+		// printMissingNumber(new int[]{1, 2, 3, 4, 6, 7, 9, 8, 10}, 10);
+
+		// three missing number
+		// printMissingNumber(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
+
+		// four missing number
+		// printMissingNumber(new int[]{1, 2, 3, 4, 9, 8}, 10);
+
+		// Only one missing number in array
+		// int[] iArray = new int[]{1, 2, 3, 5};
+		// int missing = getMissingNumber(iArray, 5);
+		// System.out.printf("Missing number in array %s is %d %n",
+		// Arrays.toString(iArray), missing);
+
+		calculateLoanPayment(1060000, 5);
+	}
+
+	public static void calculateLoanPayment(double loanamount, int years) {
+		/*
+		 * to calculate the monthly loan payment i.e. EMI
+		 * 
+		 * rate=annual interest rate/12*100; n=number of monthly installments;
+		 * 1year=12 months. so, n=years*12;
+		 * 
+		 */
+
+		double EMI;
+		int n;
+		float rate = 11;
+
+		n = years * 12;
+		rate = rate / 1200;
+		EMI = ((rate * Math.pow((1 + rate), n)) / ((Math.pow((1 + rate), n)) - 1)) * loanamount;
+
+		System.out.println("your monthly EMI is " + EMI + " for the amount" + loanamount + " you have borrowed");
 	}
 
 	/**

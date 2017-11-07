@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class ProducerConsumerWaitNotify {
 
 	LinkedList<Integer> buffer = new LinkedList<>();
-	int capacity = 3;
+	int capacity = 1;
 	int value = 1;
 
 	public static void main(String[] args) throws InterruptedException {
