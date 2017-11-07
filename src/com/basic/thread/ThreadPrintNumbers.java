@@ -7,7 +7,8 @@ public class ThreadPrintNumbers {
 
 	public static void main(String[] args) throws InterruptedException{
 
-		//printNaturalNumbers1();
+		printNaturalNumbers1();
+		Thread.sleep(3000);
 		printNaturalNumbers2();
 	}
 
@@ -34,7 +35,7 @@ public class ThreadPrintNumbers {
 		int max = 20;
 		
 		private int printEven(int number){
-			System.out.print(number + ", ");
+			System.out.print(number + (number<max?", ":""));
 			return ++number;
 		}
 		
