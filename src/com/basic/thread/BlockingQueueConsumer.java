@@ -17,6 +17,7 @@ private BlockingQueue<Message> queue;
         try{
             Message msg;
             //consuming messages until exit message is received
+            Thread.sleep(3000);
             while((msg = queue.take()).getMsg() !="exit"){
             	Thread.sleep(100);
             	System.out.println("Consumed "+msg.getMsg());

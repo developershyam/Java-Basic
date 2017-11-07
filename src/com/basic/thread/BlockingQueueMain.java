@@ -10,7 +10,7 @@ public class BlockingQueueMain {
 
 	public static void main(String[] args) {
         //Creating BlockingQueue of size 10
-        BlockingQueue<Message> queue = new ArrayBlockingQueue<>(10);
+        BlockingQueue<Message> queue = new ArrayBlockingQueue<>(5);
         BlockingQueueProducer producer = new BlockingQueueProducer(queue);
         BlockingQueueConsumer consumer = new BlockingQueueConsumer(queue);
         //starting producer to produce messages in queue

@@ -6,6 +6,7 @@ import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -81,6 +82,21 @@ public class CollectionTest {
 		{
 			Stack<String> st = new Stack<>();
 
+		}
+		
+		{
+			String s1 = new String("A");
+			String s2 = new String("A");
+			HashMap<String, Integer> map = new HashMap<String, Integer>();
+			map.put(s1, 1);
+			map.put(s2, 2);
+			System.out.println("size: "+map.size()+": ");
+			map.keySet().forEach(key->System.out.print(key+", "));
+			IdentityHashMap<String, String> idMap = new IdentityHashMap<>();
+			idMap.put(s1, s1);
+			idMap.put(s2, s2);
+			System.out.println("\nsize: "+idMap.size()+": ");
+			idMap.keySet().forEach(key->System.out.print(key+", "));
 		}
 		
 

@@ -5,7 +5,7 @@ interface Sayable{
 }  
 
 interface Sayable2{  
-    void say();  
+    void say2();  
 }  
 public class MethodReference {  
     public static void saySomething(){  
@@ -13,8 +13,14 @@ public class MethodReference {
     }  
     public static void main(String[] args) {  
         // Referring static method  
-        Sayable2 sayable = MethodReference::saySomething;  
+        Sayable sayable = MethodReference::saySomething;  
+        Sayable2 sayable2 = MethodReference::saySomething;
         // Calling interface method  
+        
+          
+        
         sayable.say();  
+        
+        sayable2.say2();  
     }  
 }  
