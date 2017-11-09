@@ -1,6 +1,6 @@
 package com.basic.dsa;
 
-public class MyDynamicStack {
+public class StackDynamicImp {
 	 
     private int stackSize;
     private int[] stackArr;
@@ -10,7 +10,7 @@ public class MyDynamicStack {
      * constructor to create stack with size
      * @param size
      */
-    public MyDynamicStack(int size) {
+    public StackDynamicImp(int size) {
         this.stackSize = size;
         this.stackArr = new int[stackSize];
         this.top = -1;
@@ -79,15 +79,28 @@ public class MyDynamicStack {
     public boolean isStackFull() {
         return (top == stackSize - 1);
     }
- 
+    
+    /**
+     * This method returns true if the stack is full
+     * @return
+     */
+    public void printStack() {
+        for(int i=0; i<=top;i++){
+        	System.out.print(stackArr[i]+ (i<top?", ":""));
+        }
+        System.out.println();
+    }
+    
     public static void main(String[] args) {
-        MyDynamicStack stack = new MyDynamicStack(2);
+        StackDynamicImp stack = new StackDynamicImp(2);
         for(int i=1;i<10;i++){
             stack.push(i);
+            stack.printStack();
         }
         for(int i=1;i<4;i++){
             try {
                 stack.pop();
+                stack.printStack();
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

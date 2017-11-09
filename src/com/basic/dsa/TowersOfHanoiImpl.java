@@ -2,14 +2,14 @@ package com.basic.dsa;
 
 public class TowersOfHanoiImpl {
     
-    private static MyDynamicStack[] tower; 
+    private static StackDynamicImp[] tower; 
      
     public static void towersOfHanoi(int n) {
  
         // create three stacks, tower[0] is scratch
-        tower = new MyDynamicStack[4];
+        tower = new StackDynamicImp[4];
         for (int i = 0; i <= 3; i++){
-            tower[i] = new MyDynamicStack(4);
+            tower[i] = new StackDynamicImp(4);
         }
         for (int d = n; d > 0; d--){
             // initialize
