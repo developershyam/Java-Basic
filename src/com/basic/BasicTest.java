@@ -4,6 +4,14 @@ public class BasicTest {
 	
 	public static void main(String[] args) {
 		
+		System.out.println("Character min: "+Character.MIN_VALUE+", Character max: "+Character.MAX_VALUE);
+		System.out.println("Byte min: "+Byte.MIN_VALUE+", Byte max: "+Byte.MAX_VALUE);
+		System.out.println("Short min: "+Short.MIN_VALUE+", Short max: "+Short.MAX_VALUE);
+		System.out.println("Integer min: "+Integer.MIN_VALUE+", Integer max: "+Integer.MAX_VALUE);
+		System.out.println("Long min: "+Long.MIN_VALUE+", Long max: "+Long.MAX_VALUE);
+		System.out.println("Float min: "+Float.MIN_VALUE+", Float max: "+Float.MAX_VALUE);
+		System.out.println("Double min: "+Double.MIN_VALUE+", Double max: "+Double.MAX_VALUE);
+		
 		//byte b =(byte)256; // compile error on without cast greater than 127, For overflow greater than 127 re-start from -128-127.
 		//System.out.println(b); //0
 		

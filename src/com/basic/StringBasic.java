@@ -21,8 +21,8 @@ public class StringBasic {
 		StringBuffer sbf2 = new StringBuffer("abc");
 		System.out.println(sbf1.equals(sbf2));
 		
-		String a = "Love";  
-        String b = "You";  
+		String a = "abc";  
+        String b = "pqr";  
         System.out.println("Before swap: " + a + " " + b);  
         a = a + b;  
         b = a.substring(0, a.length() - b.length());  

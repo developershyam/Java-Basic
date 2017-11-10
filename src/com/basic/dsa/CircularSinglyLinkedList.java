@@ -1,6 +1,6 @@
 package com.basic.dsa;
 
-public class CircularLinkedList {
+public class CircularSinglyLinkedList {
 
 	public int size = 0;
 	public Node head = null;
@@ -127,7 +127,7 @@ public class CircularLinkedList {
 	}
 
 	public static void main(String[] args) {
-		CircularLinkedList c = new CircularLinkedList();
+		CircularSinglyLinkedList c = new CircularSinglyLinkedList();
 		c.addNodeAtStart(3);
 		c.addNodeAtStart(2);
 		c.addNodeAtStart(1);

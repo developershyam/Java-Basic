@@ -58,6 +58,31 @@ public class CodePractice {
 		// Arrays.toString(iArray), missing);
 
 		calculateLoanPayment(1060000, 5);
+		
+		System.out.println("31"+ (isPowerOfTwo(31) ? "Yes" : "No") +" -- "+ (isPowerOfTwo2(31) ? "Yes" : "No"));
+        System.out.println("17"+(isPowerOfTwo(17) ? "Yes" : "No")+" -- "+(isPowerOfTwo2(17) ? "Yes" : "No"));
+        System.out.println("16"+(isPowerOfTwo(16) ? "Yes" : "No")+ " -- "+(isPowerOfTwo2(16) ? "Yes" : "No"));
+        System.out.println("2"+(isPowerOfTwo(2) ? "Yes" : "No")+" -- "+(isPowerOfTwo2(2) ? "Yes" : "No"));
+        System.out.println("18"+(isPowerOfTwo(18) ? "Yes" : "No")+" -- "+(isPowerOfTwo2(18) ? "Yes" : "No"));
+        System.out.println("1"+(isPowerOfTwo(1) ? "Yes" : "No")+" -- "+(isPowerOfTwo2(1) ? "Yes" : "No"));
+	}
+
+	/* Function to check if x is power of 2 */
+	static boolean isPowerOfTwo(int n) {
+		if (n == 0)
+			return false;
+		while (n != 1) {
+			if (n % 2 != 0)
+				return false;
+			n = n / 2;
+		}
+		return true;
+	}
+	
+	/* Function to check if x is power of 2 */
+	static boolean isPowerOfTwo2(int n) {
+		
+		return n!=0 &&   ( n & (n-1))==0;
 	}
 
 	public static void calculateLoanPayment(double loanamount, int years) {

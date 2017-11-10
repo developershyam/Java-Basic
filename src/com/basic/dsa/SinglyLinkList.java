@@ -1,6 +1,6 @@
 package com.basic.dsa;
 
-import com.basic.dsa.CircularLinkedList.Node;
+import com.basic.dsa.CircularSinglyLinkedList.Node;
 
 public class SinglyLinkList {
 
