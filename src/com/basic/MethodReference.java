@@ -1,5 +1,4 @@
 package com.basic;
-
 interface Sayable{  
     void say();  
 }  

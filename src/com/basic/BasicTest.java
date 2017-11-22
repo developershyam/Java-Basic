@@ -4,6 +4,17 @@ public class BasicTest {
 	
 	public static void main(String[] args) {
 		
+		String s1 = new String("A");
+		String s2 ="A";
+		System.out.println(s1.equals(s2));
+		System.out.println(s1==s2);
+		
+		if(true && false || true){
+			System.out.println("If");
+		}else{
+			System.out.println("Elase");
+		}
+		
 		System.out.println("Character min: "+Character.MIN_VALUE+", Character max: "+Character.MAX_VALUE);
 		System.out.println("Byte min: "+Byte.MIN_VALUE+", Byte max: "+Byte.MAX_VALUE);
 		System.out.println("Short min: "+Short.MIN_VALUE+", Short max: "+Short.MAX_VALUE);
