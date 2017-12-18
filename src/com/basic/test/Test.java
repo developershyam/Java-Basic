@@ -49,7 +49,8 @@ public class Test {
 	     
 	     FNIn fin = Test:: main;
 	     
-	     while(true){}
+	     System.out.println(fin.hashCode());
+	     //while(true){}
 	     
 	     //Abs.test();
 	 }
@@ -82,4 +83,9 @@ class Ext implements FNIn, AutoCloseable{
 		System.out.println("close.....");
 	}
 	
+}
+
+interface InterFace1{
+	@Override
+	int hashCode();
 }
