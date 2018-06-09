@@ -47,13 +47,27 @@ public class Test {
 			System.out.println("finally..");
 		}
 	     
-	     FNIn fin = Test:: main;
+	   //  FNIn fin = Test:: main;
 	     
-	     while(true){}
+	     //while(true){}
 	     
 	     //Abs.test();
+	     //main();
+	     //test(null);
 	 }
-	 private static void main(){} 
+	 private static int test(Integer i){
+		 
+		 return i;
+	 } 
+	 private static float test(Float f){
+		 
+		 return f;
+	 } 
+	 
+	 private static Object test(Object o){
+		 
+		 return o;
+	 } 
 	 
 	 
 }

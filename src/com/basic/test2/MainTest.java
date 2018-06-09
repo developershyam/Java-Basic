@@ -1,6 +1,7 @@
 package com.basic.test2;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
@@ -28,7 +29,7 @@ public class MainTest implements Serializable, Cloneable{
 		MyClose my = me.new MyClose();
 		try(MyClose my2 =my) {
 			System.out.println("In try....");
-		} catch (Exception e) {
+		} catch (RuntimeException | FileNotFoundException e) {
 			System.out.println("In Exception....");
 		}finally {
 			System.out.println("In finally....");

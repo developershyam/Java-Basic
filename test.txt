@@ -1,0 +1,97 @@
+import { Directive, ElementRef, EventEmitter, OnDestroy, Output, OnInit, Input } from '@angular/core';
+
+@Directive({
+  selector: '[domChange]'
+})
+export class DomChangeDirective implements OnInit, OnDestroy {
+
+  private mutationObserver: MutationObserver;
+  private pollingObserver: number;
+  private supportedMutationObserver = false;
+  @Input()
+  public pollingTTL: number = 60000;
+  @Input()
+  public pollingInterval: number = 500;
+  private elapsedTime: number;
+
+  private config = { attributes: true, childList: true, characterData: true };
+
+  @Output()
+  public domChange = new EventEmitter();
+
+  constructor(private elementRef: ElementRef) {
+    this.supportedMutationObserver = typeof MutationObserver === 'undefined' ? true : false;
+    console.log('================> ' + this.supportedMutationObserver);
+    console.log('DomChangeDirective ..... constructor--- ');
+    const element = this.elementRef.nativeElement;
+
+    if (this.supportedMutationObserver) {
+      console.log('MutationObserver automatically stared....');
+      this.mutationObserver = new MutationObserver(this.mutionsObserverCallback.bind(this));
+      this.mutationObserver.observe(element, this.config);
+    }
+  }
+
+  public ngOnInit(): void {
+    console.log('DomChangeDirective ..... ngOnInit----');
+    if (!this.supportedMutationObserver) {
+      console.log('pollingTTL: ' + this.pollingTTL + ', pollingInterval: ' + this.pollingInterval);
+      this.elapsedTime = this.pollingTTL;
+      this.pollingObserver = setInterval(this.pollingCallback.bind(this), this.pollingInterval);
+      console.log('Polling --- automatically started -----');
+    }
+  }
+
+  ngOnDestroy(): void {
+    console.log('DomChangeDirective ..... ngOnDestroy');
+    this.stop();
+  }
+
+  public start() {
+    if (this.supportedMutationObserver) {
+      console.log('MutationObserver --- manually started ------ ');
+      this.mutationObserver.observe(this.elementRef.nativeElement, this.config);
+    } else if (!this.pollingObserver) {
+      console.log('Polling  ------ manually started ------ ');
+      this.elapsedTime = this.pollingTTL;
+      this.pollingObserver = setInterval(this.pollingCallback.bind(this), this.pollingInterval);
+    }
+  }
+
+  public stop() {
+    if (this.supportedMutationObserver) {
+      this.mutationObserver.disconnect();
+      console.log('MutationObserver stopped -------------');
+    } else {
+      clearTimeout(this.pollingObserver);
+      this.pollingObserver = null;
+      console.log('Polling  stopped ------------- ');
+    }
+  }
+
+  private mutionsObserverCallback(mutations: MutationRecord[]) {
+    console.log('MutationRecord.......found....mutionsObserverCallback');
+    this.triggerEvent(mutations);
+  }
+
+  private pollingCallback() {
+    this.elapsedTime = this.elapsedTime - this.pollingInterval;
+    console.log('Polling.......found....pollingCallback,  elapsedTime: ' + this.elapsedTime);
+    this.triggerEvent(null);
+    if (this.elapsedTime <= 0) {
+      this.stop();
+    }
+  }
+
+  private triggerEvent(mutations) {
+    console.log('DomChangeDirective ..... emit event');
+    const name = this.supportedMutationObserver ? 'MutationObserver' : 'Polling';
+    const event = {_self: this, records: mutations, eventType: name};
+    console.dir(event);
+    this.domChange.emit(event);
+  }
+}
+
+
+=========================
+
