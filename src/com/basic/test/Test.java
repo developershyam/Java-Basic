@@ -47,27 +47,14 @@ public class Test {
 			System.out.println("finally..");
 		}
 	     
-	   //  FNIn fin = Test:: main;
+	     FNIn fin = Test:: main;
 	     
+	     System.out.println(fin.hashCode());
 	     //while(true){}
 	     
 	     //Abs.test();
-	     //main();
-	     //test(null);
 	 }
-	 private static int test(Integer i){
-		 
-		 return i;
-	 } 
-	 private static float test(Float f){
-		 
-		 return f;
-	 } 
-	 
-	 private static Object test(Object o){
-		 
-		 return o;
-	 } 
+	 private static void main(){} 
 	 
 	 
 }
@@ -96,4 +83,9 @@ class Ext implements FNIn, AutoCloseable{
 		System.out.println("close.....");
 	}
 	
+}
+
+interface InterFace1{
+	@Override
+	int hashCode();
 }
